@@ -227,14 +227,17 @@ function mostrarReflexiones() {
 
     const btnEliminar = document.createElement("button");
     btnEliminar.textContent = "🗑️ Eliminar";
+    btnEliminar.className = "btn-eliminar";
     btnEliminar.addEventListener("click", () => eliminarReflexion(ref.id));
 
     const btnEditar = document.createElement("button");
     btnEditar.textContent = "✏️ Editar";
+    btnEliminar.className = "btn-editar";
     btnEditar.addEventListener("click", () => editarReflexion(ref.id));
 
     const btnExportar = document.createElement("button");
     btnExportar.textContent = "📄 Exportar a Word";
+    btnEliminar.className = "btn-exportar";
     btnExportar.addEventListener("click", () => exportarReflexionWord(ref));
 
     body.appendChild(texto);
