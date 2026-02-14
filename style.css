@@ -119,6 +119,15 @@ main {
   box-shadow: 0 6px 18px rgba(15,23,42,0.04);
   transition: transform .14s ease, box-shadow .14s ease;
 }
+
+.reflexion-header {
+  cursor: pointer;
+}
+
+.reflexion-body {
+  margin-top: 10px;
+}
+
 .reflexion:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,23,42,0.06); }
 .reflexion h3 { margin: 0 0 6px 0; color: var(--primary); font-size: 1rem; }
 .reflexion small { color: var(--muted); display:block; margin-bottom: 8px; font-size: .85rem; }
