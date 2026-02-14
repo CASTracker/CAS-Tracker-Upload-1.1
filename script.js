@@ -247,8 +247,15 @@ function mostrarReflexiones() {
 
     // Toggle al hacer click en el header
     header.addEventListener("click", () => {
-      body.style.display = body.style.display === "none" ? "block" : "none";
-    });
+  if (body.style.maxHeight) {
+    body.style.maxHeight = null;
+    body.style.opacity = "0";
+  } else {
+    body.style.maxHeight = body.scrollHeight + "px";
+    body.style.opacity = "1";
+  }
+});
+
 
     div.appendChild(header);
     div.appendChild(body);
