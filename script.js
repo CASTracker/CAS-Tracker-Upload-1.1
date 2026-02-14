@@ -220,7 +220,6 @@ function mostrarReflexiones() {
     // BODY (Oculto por defecto)
     const body = document.createElement("div");
     body.className = "reflexion-body";
-    body.style.display = "none";
 
     const texto = document.createElement("p");
     texto.textContent = ref.texto;
