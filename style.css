@@ -220,15 +220,6 @@ footer.site-footer {
   font-size: 14px;
 }
 
-.reflexion button:nth-child(4) { /* Editar */
-  background-color: #ffc107;
-  color: white;
-}
-
-.reflexion button:nth-child(5) { /* Eliminar */
-  background-color: #dc3545;
-  color: white;
-}
 
 .reflexion button {
   margin-right: 6px;
@@ -240,14 +231,27 @@ footer.site-footer {
   font-weight: 600;
 }
 
-.reflexion button:nth-child(6) {
+.btn-editar {
+  background-color: #ffc107;
+  color: white;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-exportar {
   background-color: #0077b6;
   color: white;
 }
 
-.reflexion button:nth-child(6):hover {
+.btn-exportar:hover {
   background-color: #0096c7;
 }
+
+
+
 
 
 .textarea-container {
