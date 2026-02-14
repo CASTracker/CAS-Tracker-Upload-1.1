@@ -200,14 +200,27 @@ function mostrarReflexiones() {
   cont.innerHTML = "";
 
   reflexiones.slice().reverse().forEach(ref => {
+
     const div = document.createElement("div");
     div.className = "reflexion";
+
+    // HEADER (Siempre visible)
+    const header = document.createElement("div");
+    header.className = "reflexion-header";
 
     const titulo = document.createElement("h3");
     titulo.textContent = ref.titulo;
 
     const fecha = document.createElement("small");
     fecha.textContent = ref.fecha;
+
+    header.appendChild(titulo);
+    header.appendChild(fecha);
+
+    // BODY (Oculto por defecto)
+    const body = document.createElement("div");
+    body.className = "reflexion-body";
+    body.style.display = "none";
 
     const texto = document.createElement("p");
     texto.textContent = ref.texto;
@@ -224,16 +237,22 @@ function mostrarReflexiones() {
     btnExportar.textContent = "📄 Exportar a Word";
     btnExportar.addEventListener("click", () => exportarReflexionWord(ref));
 
-    div.appendChild(titulo);
-    div.appendChild(fecha);
-    div.appendChild(texto);
-    div.appendChild(btnEditar);
-    div.appendChild(btnEliminar);
-    div.appendChild(btnExportar);
+    body.appendChild(texto);
+    body.appendChild(btnEditar);
+    body.appendChild(btnEliminar);
+    body.appendChild(btnExportar);
 
+    // Toggle al hacer click en el header
+    header.addEventListener("click", () => {
+      body.style.display = body.style.display === "none" ? "block" : "none";
+    });
+
+    div.appendChild(header);
+    div.appendChild(body);
     cont.appendChild(div);
   });
 }
+
 
 function eliminarReflexion(id) {
   const confirmar = confirm("¿Seguro que quieres eliminar esta reflexión?");
